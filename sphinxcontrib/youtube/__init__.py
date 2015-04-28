@@ -41,5 +41,7 @@ def setup(app):
     from . import youtube
 
     app.add_node(youtube.youtube,
-                 html=(youtube.visit, youtube.depart))
+                 html=(youtube.visit, youtube.depart),
+                 latex=(youtube.visit_latex, youtube.depart_latex)
+                 )
     app.add_directive('youtube', youtube.YoutubeDirective)

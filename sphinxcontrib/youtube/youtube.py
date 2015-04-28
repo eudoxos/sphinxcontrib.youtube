@@ -44,6 +44,14 @@ def depart(self, node):
     pass
 
 
+def visit_latex(self,node):
+    'Show hyperlinnk in centered box for in LaTeX'
+    self.body.append(r'\begin{quote}\begin{center}\fbox{\url{https://www.youtu.be/%s}}\end{center}\end{quote}'%node.video_id)
+
+def depart_latex(self,node):
+    pass
+
+
 class YoutubeDirective(rst.Directive):
 
     name = 'youtube'
